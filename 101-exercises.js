@@ -1341,6 +1341,16 @@ addToDone("Exercise 75 is correct.")
 // Exercise 76
 // Write a function definition named countPositives that takes in sequence of numbers and returns a count of the number of positive numbers
 
+function countPositives (seq) {
+    var counter = 0;
+    for (var i = 0; i < seq.length; i++) {
+        if (isPositive(seq[i])) {
+            counter++
+        }
+    }
+    return counter;
+}
+
 assert(countPositives([1, -2, 3]), 2, "Exercise 76");
 assert(countPositives([2, -5, -6]), 1, "Exercise 76");
 assert(countPositives([3, 3, 3]), 3, "Exercise 76");
@@ -1350,6 +1360,16 @@ addToDone("Exercise 76 is correct.")
 
 // Exercise 77
 // Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
+
+function onlyPositiveEvens (seq) {
+    var positiveEvens = [];
+    for (var i = 0; i < seq.length; i++) {
+        if (isPositive(seq[i]) && isEven(seq[i])) {
+            positiveEvens.push(seq[i]);
+        }
+    }
+    return positiveEvens;
+}
 
 assert(onlyPositiveEvens([1, -2, 3]), [], "Exercise 77");
 assert(onlyPositiveEvens([2, -5, -6]), [2], "Exercise 77");
@@ -1361,6 +1381,16 @@ addToDone("Exercise 77 is correct.")
 // Exercise 78
 // Write a function definition named onlyPositiveOdds that takes in sequence of numbers and returns an array containing all the positive odd numbers from the sequence
 
+function onlyPositiveOdds (seq) {
+    var positiveOdds = [];
+    for (var i = 0; i < seq.length; i++) {
+        if (isPositive(seq[i]) && isOdd(seq[i])) {
+            positiveOdds.push(seq[i]);
+        }
+    }
+    return positiveOdds;
+}
+
 assert(onlyPositiveOdds([1, -2, 3]), [1, 3], "Exercise 78");
 assert(onlyPositiveOdds([2, -5, -6]), [], "Exercise 78");
 assert(onlyPositiveOdds([3, 3, 4, 6]), [3, 3], "Exercise 78");
@@ -1370,6 +1400,16 @@ addToDone("Exercise 78 is correct.")
 
 // Exercise 79
 // Write a function definition named onlyNegativeEvens that takes in sequence of numbers and returns an array containing all the negative even numbers from the sequence
+
+function onlyNegativeEvens (seq) {
+    var negativeEvens = [];
+    for (var i = 0; i < seq.length; i++) {
+        if (isNegative(seq[i]) && isEven(seq[i])) {
+            negativeEvens.push(seq[i]);
+        }
+    }
+    return negativeEvens;
+}
 
 assert(onlyNegativeEvens([1, -2, 3]), [-2], "Exercise 79");
 assert(onlyNegativeEvens([2, -5, -6]), [-6], "Exercise 79");
@@ -1381,6 +1421,16 @@ addToDone("Exercise 79 is correct.")
 // Exercise 80
 // Write a function definition named onlyNegativeOdds that takes in sequence of numbers and returns an array containing all the negative odd numbers from the sequence
 
+function onlyNegativeOdds (seq) {
+    var negativeOdds = [];
+    for (var i = 0; i < seq.length; i++) {
+        if (isNegative(seq[i]) && isOdd(seq[i])) {
+            negativeOdds.push(seq[i]);
+        }
+    }
+    return negativeOdds;
+}
+
 assert(onlyNegativeOdds([1, -2, 3]), [], "Exercise 80");
 assert(onlyNegativeOdds([2, -5, -6]), [-5], "Exercise 80");
 assert(onlyNegativeOdds([3, 3, 4, 6]), [], "Exercise 80");
@@ -1390,6 +1440,10 @@ addToDone("Exercise 80 is correct.")
 
 // Exercise 81
 // Write a function definition named shortestString that takes in an array of strings and returns the shortest string in the array.
+
+function shortestString (arr) {
+    var shortStr = [];
+}
 
 assert(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
 assert(shortestString(["hello", "everybody"]), "hello", "Exercise 81");
