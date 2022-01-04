@@ -1442,7 +1442,13 @@ addToDone("Exercise 80 is correct.")
 // Write a function definition named shortestString that takes in an array of strings and returns the shortest string in the array.
 
 function shortestString (arr) {
-    var shortStr = [];
+    var shortStr = "example";
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].length < shortStr.length) {
+            shortStr = arr[i];
+        }
+    }
+    return shortStr;
 }
 
 assert(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
@@ -1454,6 +1460,16 @@ addToDone("Exercise 81 is correct.")
 // Exercise 82
 // Write a function definition named longestString that takes in sequence of strings and returns the longest string in the array.
 
+function longestString (seq) {
+    var longest = "";
+    for (var i = 0; i < seq.length; i++) {
+        if (seq[i].length > longest.length) {
+            longest = seq[i];
+        }
+    }
+    return longest;
+}
+
 assert(longestString(["kiwi", "mango", "strawberry"]), "strawberry", "Exercise 82");
 assert(longestString(["hello", "everybody"]), "everybody", "Exercise 82");
 assert(longestString(["mary", "had", "a", "little", "lamb"]), "little", "Exercise 82");
@@ -1462,6 +1478,17 @@ addToDone("Exercise 82 is correct.")
 
 // Exercise 83
 // Write a function definition named getUniqueValues that takes in an array and returns an with only the unique values from that array.
+
+function getUniqueValues (arr) {
+    var unique = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (unique.includes(arr[i])) {
+            continue;
+        }
+        unique.push(arr[i])
+    }
+    return unique;
+}
 
 assert(getUniqueValues(["ant", "ant", "mosquito", "mosquito", "ladybug"]), ["ant", "mosquito", "ladybug"], "Exercise 83");
 assert(getUniqueValues(["b", "a", "n", "a", "n", "a", "s"]), ["b", "a", "n", "s"], "Exercise 83");
@@ -1472,6 +1499,12 @@ addToDone("Exercise 83 is correct.")
 // Exercise 84
 // Write a function definition named elementsTimesTwo that takes in an array of numbers and returns an array with each value multiplied by 2.
 
+function elementsTimesTwo (arr) {
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] *= 2;
+    }
+    return arr;
+}
 
 assert(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
 assert(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
@@ -1482,6 +1515,10 @@ addToDone("Exercise 84 is correct.")
 // Exercise 85
 // Write a function named flatten that takes in an array of arrays. Return the flattened array.
 
+function flatten (arr) {
+    // look on the internet
+    return [].concat.apply([], arr);
+}
 
 assert(flatten([[1, 2], [3, 4], [5, 6]]), [1, 2, 3, 4, 5, 6], "Exercise 85");
 assert(flatten([[1, 2, 3], [1, 2, 3], [1, 2, 3]]), [1, 2, 3, 1, 2, 3, 1, 2, 3], "Exercise 85");
